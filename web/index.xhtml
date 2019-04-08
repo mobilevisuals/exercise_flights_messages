@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"> 
+
+<h:head>
+	<title>Exercise 1 - Ticket booking</title>
+</h:head> 
+<body>
+	<h:form id='form1'>
+		First name: <h:inputText value="#{flightTicket.firstName}" id='text1'/>
+		<br/><br/>
+		Last name: <h:inputText value="#{flightTicket.lastName}" id='text2'/>
+		<br/><br/>
+		Occupation: <h:inputText value="#{flightTicket.occupation}" />
+		<br/><br/>
+		Destination: 
+		<h:selectOneMenu value="#{flightTicket.destination}">
+			<f:selectItems value="#{flightTicket.destinationOptions}" />
+		</h:selectOneMenu>
+		<br/><br/>
+		Travel class:
+		<h:selectOneRadio value="#{flightTicket.travelClass}" >
+			<f:selectItems value="#{flightTicket.travelClassOptions}" />
+		</h:selectOneRadio>
+		<br/><br/>
+                <h:commandButton id="addMessage" action="#{flightTicket.newMessage()}" value="Book Ticket" />
+	</h:form>
+</body> 
+</html>
